@@ -14,6 +14,7 @@ import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import {FieldsetModule} from 'primeng/fieldset';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 import { LoginComponent } from './login/login.component';
 import { E404Component } from './e404/e404.component';
 import { CommentsComponent } from './comments/comments.component';
@@ -39,7 +40,8 @@ import { CommentsComponent } from './comments/comments.component';
     FieldsetModule,
     BrowserAnimationsModule,
     InputTextModule,
-    PasswordModule
+    PasswordModule,
+    InputTextareaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

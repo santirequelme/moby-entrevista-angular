@@ -1,4 +1,4 @@
-<div class="comments">
+<section class="comments">
   <p-fieldset legend="COMMENTS" [toggleable]="true">
     <div class="comment" *ngFor="let comment of commentsFilter">
       <h3> {{comment.email}} </h3>
@@ -8,4 +8,21 @@
   <div >
   <button class="emit-button" pButton type="button" label="EMIT" (click)="getDate()"></button>
 </div>
-</div>
+</section>
+<section class="add-comment">
+  <h4>New Comment</h4>
+  <div class="form-group p-grid p-fluid">
+      <div class="p-inputgroup mt-2">
+        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+        <input type="text" pInputText placeholder="Name">
+      </div>
+      <div class="p-inputgroup mt-2">
+        <span class="p-inputgroup-addon"><i class="pi pi-at"></i></span>
+        <input type="email" pInputText placeholder="E-mail address" ngModel email="true" required>
+      </div>
+      <div class="p-inputgroup mt-2">
+        <textarea [rows]="5" pInputTextarea placeholder="Add a new comment"></textarea>
+      </div>
+      <button class="comment-button mt-2" pButton type="button" label="Comment"></button>
+  </div>
+</section>
