@@ -1,5 +1,5 @@
 <div class="details">
-  <div class="fecha" *ngIf="currentDate"> {{myDate | date}} </div>
+  <div style="text-align: end;" *ngIf="currentDate"> Last comment: {{myDate | date}} </div> 
 <p-fieldset legend="Detail post: {{post.id}}" [toggleable]="true">
   <h1>{{post.title}}</h1>
   <p>

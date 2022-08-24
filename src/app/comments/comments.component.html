@@ -1,9 +1,11 @@
 <div class="comments">
-  <h1>COMMENTS</h1>
-  <div class="comment" *ngFor="let comment of commentsFilter">
-    <h3> {{comment.email}} </h3>
-    <p> {{comment.body}} </p>
-  </div>
-
-
+  <p-fieldset legend="COMMENTS" [toggleable]="true">
+    <div class="comment" *ngFor="let comment of commentsFilter">
+      <h3> {{comment.email}} </h3>
+      <p> {{comment.body}} </p>
+    </div>
+  </p-fieldset>
+  <div >
+  <button class="emit-button" pButton type="button" label="EMIT" (click)="getDate()"></button>
+</div>
 </div>
