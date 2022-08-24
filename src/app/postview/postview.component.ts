@@ -14,17 +14,14 @@ export class PostviewComponent implements OnInit {
   posts:any=[]
 
   constructor(public apiservice: ApiService) { }
-
-  getPostList(){
-    this.apiservice.getPostsList()
-    .subscribe(data => {
-      this.posts=data
-    })
-  }
   
 
   ngOnInit(): void {
-    this.getPostList()
+    this.apiservice.getPostsList().subscribe((res:any)=>{
+     
+      this.posts = res.slice(0,10)
+    });
+    
   }
 
 }
