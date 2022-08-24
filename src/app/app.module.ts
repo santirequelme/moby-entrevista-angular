@@ -16,6 +16,7 @@ import { TableModule } from 'primeng/table';
 import {FieldsetModule} from 'primeng/fieldset';
 import { LoginComponent } from './login/login.component';
 import { E404Component } from './e404/e404.component';
+import { CommentsComponent } from './comments/comments.component';
 
 
 
@@ -27,7 +28,8 @@ import { E404Component } from './e404/e404.component';
     HeaderComponent,
     DetailsviewComponent,
     LoginComponent,
-    E404Component
+    E404Component,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,

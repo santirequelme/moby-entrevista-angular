@@ -12,12 +12,19 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailsviewComponent implements OnInit {
 
   post:any;
-  
+  myDate= new Date()
+  currentDate=false;
+
+
+  getDate(){
+    this.currentDate=true;
+
+  }
 
   constructor( public apiservice: ApiService, private activatedRoute: ActivatedRoute ) { }
 
   ngOnInit(): void {
-
+      //consulta
     const id= this.activatedRoute.snapshot.paramMap.get("id")
 
     this.apiservice.getPostById(id)

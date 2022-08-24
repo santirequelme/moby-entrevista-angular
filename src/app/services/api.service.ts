@@ -15,4 +15,7 @@ export class ApiService {
   getPostById(id:any){
     return this.http.get("https://jsonplaceholder.typicode.com/posts/"+id)
   }
+  getComments(){
+    return this.http.get("https://jsonplaceholder.typicode.com/comments/")
+  }
 }
