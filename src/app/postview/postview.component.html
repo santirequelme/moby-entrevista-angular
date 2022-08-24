@@ -12,7 +12,7 @@
         <tr *ngFor="let post of posts">
             <td>{{post.id}}</td>
             <td>{{post.title}}</td>
-            <td><button routerLink="{{post.id}}">watch</button></td>
+            <td><button pButton routerLink="{{post.id}}" class="p-button-warning" icon="pi pi-eye" pTooltip="watch"></button></td>
         </tr>
     </ng-template>
 </p-table>

@@ -18,6 +18,7 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
 import { LoginComponent } from './login/login.component';
 import { E404Component } from './e404/e404.component';
 import { CommentsComponent } from './comments/comments.component';
+import { TooltipModule } from 'primeng/tooltip';
 
 
 
@@ -41,7 +42,8 @@ import { CommentsComponent } from './comments/comments.component';
     BrowserAnimationsModule,
     InputTextModule,
     PasswordModule,
-    InputTextareaModule
+    InputTextareaModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
