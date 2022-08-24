@@ -1,20 +1,18 @@
 <h1>LIST OF POSTS</h1>
 <div class="post-list">
-  <p-table>
+  <p-table [value]="posts">
     <ng-template pTemplate="header">
         <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Quantity</th>
+            <th>ID</th>
+            <th>POST</th>
+            <th>ACTIONS</th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-posts>
-        <tr>
-            <td>UNA COSA</td>
-            <td>UNA COSA</td>
-            <td>UNA COSA</td>
-            <td>UNA COSA</td>
+    <ng-template pTemplate="body">
+        <tr *ngFor="let post of posts">
+            <td>{{post.id}}</td>
+            <td>{{post.title}}</td>
+            <td><button routerLink="{{post.id}}">watch</button></td>
         </tr>
     </ng-template>
 </p-table>
