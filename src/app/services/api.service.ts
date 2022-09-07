@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
+import { PostList } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-
+  
   constructor(private http: HttpClient) { }
 
   getPostsList(){
-    return this.http.get("https://jsonplaceholder.typicode.com/posts")
+    const url = `https://jsonplaceholder.typicode.com/posts`;
+    return this.http.get<PostList>(url)
   }
   getPostById(id:any){
-    return this.http.get("https://jsonplaceholder.typicode.com/posts/"+id)
+    const url = `https://jsonplaceholder.typicode.com/posts`;
+    return this.http.get(url+id)
   }
   getComments(){
-    return this.http.get("https://jsonplaceholder.typicode.com/comments/")
+    const url = `https://jsonplaceholder.typicode.com/posts`;
+    return this.http.get(url)
   }
 }

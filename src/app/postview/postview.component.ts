@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostList } from '../interfaces/interfaces';
 
 import { ApiService } from '../services/api.service';
 
@@ -10,18 +11,15 @@ import { ApiService } from '../services/api.service';
   providers: [ApiService]
 })
 export class PostviewComponent implements OnInit {
-
-  posts:any=[]
-
+  public posts: PostList[] = [];
   constructor(public apiservice: ApiService) { }
   
 
   ngOnInit(): void {
-    this.apiservice.getPostsList().subscribe((res:any)=>{
-     
-      this.posts = res.slice(0,10)
+    this.apiservice.getPostsList()
+      .subscribe(( resp )=>{
+        this.posts = resp.slice(0,10)
     });
-    
   }
 
 }
