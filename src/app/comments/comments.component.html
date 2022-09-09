@@ -1,28 +1,56 @@
 <section class="comments">
-  <p-fieldset legend="COMMENTS" [toggleable]="true">
-    <div class="comment" *ngFor="let comment of commentsFilter">
+  <div>
+    <div class="comment" *ngFor="let comment of comments">
       <h3> {{comment.email}} </h3>
-      <p> {{comment.body}} </p>
+      <p class="comment-name"><b>Name</b>: {{ comment.name | titlecase }}</p>
+      <p class="comment-body"><b>Comment</b>: {{ comment.body | titlecase }}</p>
     </div>
-  </p-fieldset>
-  <div >
-  <button class="emit-button" pButton type="button" label="EMIT" (click)="getDate()"></button>
-</div>
+  </div>
+  <div>
+    <button class="emit-button" pButton type="button" label="EMIT" (click)="getDate()"></button>
+  </div>
 </section>
+
 <section class="add-comment">
   <h4>New Comment</h4>
-  <div class="form-group p-grid p-fluid">
+  <form [formGroup]="dataForm">
+    <div class="form-group">
       <div class="p-inputgroup mt-2">
-        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-        <input type="text" pInputText placeholder="Name">
+          <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+          <input type="text" pInputText placeholder="Name" required formControlName="name" />
+        <p class="error-message" *ngIf="
+        dataForm.get('name')?.errors?.required && dataForm.get('name')?.touched
+      ">
+          This field is required
+        </p>
       </div>
       <div class="p-inputgroup mt-2">
         <span class="p-inputgroup-addon"><i class="pi pi-at"></i></span>
-        <input type="email" pInputText placeholder="E-mail address" ngModel email="true" required>
+        <input type="email" pInputText placeholder="Email" required formControlName="email" />
+        <p class="error-msg" *ngIf="dataForm.get('email')?.errors?.email">
+          Email address is not valid
+        </p>
+       
+        <p class="error-message" *ngIf="
+          dataForm.get('email')?.errors?.required &&
+          dataForm.get('email')?.touched
+        ">
+          This field is required
+        </p>
       </div>
       <div class="p-inputgroup mt-2">
-        <textarea [rows]="5" pInputTextarea placeholder="Add a new comment"></textarea>
+        <textarea pInputTextarea placeholder="Add a new comment" [rows]="5"
+          placeholder="Add your comment" required formControlName="comment"></textarea>
+        <p>{{ dataForm.get("comment")?.value.length }} / 500</p>
+
+        <p class="error-message" *ngIf="
+        dataForm.get('comment')?.errors?.required &&
+        dataForm.get('comment')?.touched
+      ">
+          Max n° of characters is 500
+        </p>
       </div>
-      <button class="comment-button mt-2" pButton type="button" label="Comment"></button>
-  </div>
+      <button class="comment-button mt-2" pButton type="button" (click)="submit()" label="Comment"></button>
+    </div>
+  </form>
 </section>

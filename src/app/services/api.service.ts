@@ -1,25 +1,38 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
-import { PostList } from '../interfaces/interfaces';
+import { PostList, PostDetail, PostComments } from '../interfaces/interfaces';
+
+
+import { map } from "rxjs/operators"
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  
+
   constructor(private http: HttpClient) { }
 
-  getPostsList(){
+  @Output() addComment = new EventEmitter<PostComments>();
+
+  getPostsList() {
     const url = `https://jsonplaceholder.typicode.com/posts`;
     return this.http.get<PostList>(url)
   }
-  getPostById(id:any){
-    const url = `https://jsonplaceholder.typicode.com/posts`;
-    return this.http.get(url+id)
+  getPostById(id: number) {
+    const url = `https://jsonplaceholder.typicode.com/posts/${id}`
+
+    return this.http.get(url).pipe(map((resp: PostDetail) => {
+      return resp
+    }))
+
   }
-  getComments(){
-    const url = `https://jsonplaceholder.typicode.com/posts`;
-    return this.http.get(url)
+  getComments(id: number) {
+    const url = `https://jsonplaceholder.typicode.com/posts/${id}/comments`
+    return this.http.get(url).pipe(map((resp: any) => {
+
+      return resp
+    }))
+
   }
 }

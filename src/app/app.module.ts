@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostviewComponent } from './postview/postview.component';
@@ -13,12 +12,13 @@ import { PasswordModule } from 'primeng/password';
 
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
-import {FieldsetModule} from 'primeng/fieldset';
+import { FieldsetModule } from 'primeng/fieldset';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import { LoginComponent } from './login/login.component';
 import { E404Component } from './e404/e404.component';
 import { CommentsComponent } from './comments/comments.component';
 import { TooltipModule } from 'primeng/tooltip';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -31,7 +31,7 @@ import { TooltipModule } from 'primeng/tooltip';
     DetailsviewComponent,
     LoginComponent,
     E404Component,
-    CommentsComponent
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +43,8 @@ import { TooltipModule } from 'primeng/tooltip';
     InputTextModule,
     PasswordModule,
     InputTextareaModule,
-    TooltipModule
+    TooltipModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

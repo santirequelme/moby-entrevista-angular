@@ -24,7 +24,7 @@ h4 {
 }
 
 p{
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .emit-button {
@@ -41,8 +41,29 @@ p{
   margin-top: 15px;
 }
 
+input {
+  flex: none !important;
+  width: 850px !important;
+}
+
+textarea {
+  flex: none !important;
+  width: 900px !important;
+}
+
 .comment-button {
   width: 250px;
   margin: 10px auto;
   display: block;
+}
+
+input:focus {
+  box-shadow:none !important;
+}
+
+.error-message{
+  display: flex;
+  align-items: center;
+  color: #fa6356;
+  margin: 0px 10px;
 }
