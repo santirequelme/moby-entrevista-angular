@@ -17,6 +17,7 @@ export class DetailsviewComponent implements OnInit {
   id?:number;
   myDate= new Date();
   currentDate=false;
+  newComment:any;
 
   getDate(){
     this.currentDate=true;

@@ -67,3 +67,14 @@ input:focus {
   color: #fa6356;
   margin: 0px 10px;
 }
+.ng-star-inserted {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trash-btn__container{
+  width: 44px;
+  height: 44px;
+  padding-right: 32px;
+}

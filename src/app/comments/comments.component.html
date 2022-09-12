@@ -1,9 +1,14 @@
 <section class="comments">
   <div>
     <div class="comment" *ngFor="let comment of comments">
+      <div class="comment-added">
       <h3> {{comment.email}} </h3>
       <p class="comment-name"><b>Name</b>: {{ comment.name | titlecase }}</p>
       <p class="comment-body"><b>Comment</b>: {{ comment.body | titlecase }}</p>
+    </div>
+      <button (click)="deleteComment(comment)"  pButton *ngIf="comment.isAdded" class="trash-btn__container">
+        <i class="pi pi-trash"></i>
+       </button>
     </div>
   </div>
   <div>
