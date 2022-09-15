@@ -19,7 +19,7 @@ export class CommentsComponent implements OnInit {
   @Output() currentDate: EventEmitter<boolean>;
 
   comments:PostComments[] = []; 
-  newComment: any;
+  newComment: PostComments | undefined; ////start with undefined because  Property 'newComment' has no initializer
   dataForm!: FormGroup;
 
   getDate() {
