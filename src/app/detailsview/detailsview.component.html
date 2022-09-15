@@ -1,7 +1,6 @@
 <div class="details">
+  <div style="text-align: end;" *ngIf="currentDate"> Last comment: {{myDate | date}} </div> 
   <p-fieldset legend="Detail post: {{post.id}}" [toggleable]="true">
-    <div style="text-align: end;" *ngIf="currentDate"> Last comment: {{myDate | date}} </div> 
-
     <div class="post">
       <h2 class="post-title">{{ post.title | titlecase }}</h2>
       <p class="post-text">
@@ -12,5 +11,3 @@
 </div>
 
 <app-comments (click)="getDate()" [iDate]="currentDate" [id]="id"></app-comments>
-
-<!-- <app-comments [id]="id"></app-comments> -->
