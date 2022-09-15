@@ -13,8 +13,6 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  @Output() addComment = new EventEmitter<PostComments>();
-
   getPostsList() {
     const url = `https://jsonplaceholder.typicode.com/posts`;
     return this.http.get<PostList>(url)
@@ -29,7 +27,7 @@ export class ApiService {
   }
   getComments(id: number) {
     const url = `https://jsonplaceholder.typicode.com/posts/${id}/comments`
-    return this.http.get(url).pipe(map((resp: any) => {
+    return this.http.get<PostComments>(url).pipe(map((resp: any) => {
 
       return resp
     }))
