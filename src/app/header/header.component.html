@@ -7,6 +7,6 @@
   <div class="items">
     <button type="button" routerLink="login" pButton label="Login" icon="pi pi-sign-in" *ngIf="router.url === '/login'" ></button>
     <button type="button" (click)="logOut()" pButton icon="pi pi-power-off" style="margin-left:.25em" 
-    class="p-button-warning" pTooltip="Logout" *ngIf="router.url !== '/login'"></button>
+    class="p-button-warning" pTooltip="Logout" *ngIf="!(router.url === '/register' || router.url === '/login')"></button>
   </div>  
 </header>
