@@ -15,9 +15,9 @@ import { PostDetail } from '../interfaces/interfaces';
 export class DetailsviewComponent implements OnInit {
   post = new PostDetail;
   id?:number;
+
   myDate= new Date();
   currentDate=false;
-  newComment:any;
 
   getDate(){
     this.currentDate=true;

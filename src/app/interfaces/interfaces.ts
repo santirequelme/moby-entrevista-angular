@@ -11,9 +11,10 @@ export class PostDetail{
 }
 
 export interface PostComments {
-  postId?: number;
-  id?: number;
-  name?: string;
-  email?: string;
-  body?: string;
+  name: string;
+  email: string;
+  body: string;
+  id: number;
+  postId: number;
+  isAdded: boolean;
 }

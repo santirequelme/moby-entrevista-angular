@@ -13,11 +13,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CommentsComponent implements OnInit {
 
-  @Input() iDate: boolean = false;
   @Input() id: any;
+
+  @Input() iDate: boolean = false;
   @Output() currentDate: EventEmitter<boolean>;
 
-  comments:any[] = []; 
+  comments:PostComments[] = []; 
   newComment: any;
   dataForm!: FormGroup;
 
