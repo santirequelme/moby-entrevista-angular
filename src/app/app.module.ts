@@ -19,6 +19,10 @@ import { E404Component } from './e404/e404.component';
 import { CommentsComponent } from './comments/comments.component';
 import { TooltipModule } from 'primeng/tooltip';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
 
 
 
@@ -32,6 +36,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     E404Component,
     CommentsComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     PasswordModule,
     InputTextareaModule,
     TooltipModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]

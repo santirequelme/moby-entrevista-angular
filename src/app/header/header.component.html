@@ -5,7 +5,8 @@
     </a>
   </div>
   <div class="items">
-    <button type="button" routerLink="login" pButton label="Login" icon="pi pi-sign-in" style="margin-left:.25em"></button>
-    <button type="button" pButton label="Logout" icon="pi pi-power-off" style="margin-left:.25em" class="p-button-warning"></button>
+    <button type="button" routerLink="login" pButton label="Login" icon="pi pi-sign-in" ></button>
+    <button type="button" (click)="logOut()" pButton icon="pi pi-power-off" style="margin-left:.25em" 
+    class="p-button-warning" pTooltip="Logout"></button>
   </div>  
 </header>
